@@ -11,3 +11,58 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+ul {
+  list-style-type: none;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
+  margin: 30px;
+}
+
+.resume {
+  display: grid;
+  grid-template-areas: 
+    'contact contact contact'
+    'sidebar education education'
+    'sidebar experience experience';
+}
+
+.contact {
+  grid-area: contact;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.education {
+  grid-area: education;
+}
+
+.experience {
+  grid-area: experience;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+#experience,
+#education {
+  grid-column: span 2;
+  display: grid;
+}
+
+.edit {
+  align-self: start;
+}
+
+.no-display {
+  display: none;
+}
