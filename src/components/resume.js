@@ -11,14 +11,14 @@ class Resume extends Component {
       phone: '',
       linkedin: '',
       website: '',
-      interests: [],
-      skills: [],
+      interests: '',
+      skills: '',
       education: {
         schoolName: '',
         schoolLocation: '',
         course: '',
-        startYear: 2020,
-        endYear: 2020
+        startYear: '',
+        endYear: ''
       },
       experience: {
         organization: '',
@@ -162,12 +162,51 @@ class Resume extends Component {
               onChange={this.stateObjectChange}
             />
           </fieldset>
-          <input
-            type="textarea"
-            id="education"
-            value={education}
-            onChange={this.handleChange}
-          />
+          <fieldset id="experience">
+            <legend>Experience</legend>
+            <label htmlFor="organization">Organization or Company</label>
+            <input
+              type="text"
+              id="organization"
+              value={experience.organization}
+              onChange={this.stateObjectChange}
+            />
+            <label htmlFor="position">Position</label>
+            <input
+              type="text"
+              id="position"
+              value={experience.position}
+              onChange={this.stateObjectChange}
+            />
+            <label htmlFor="jobLocation">Location</label>
+            <input
+              type="text"
+              id="location"
+              value={experience.jobLocation}
+              onChange={this.stateObjectChange}
+            />
+            <label for="startDate">Start Date</label>
+            <input
+              type="month"
+              id="startDate"
+              value={experience.startDate}
+              onChange={this.stateObjectChange}
+            />
+            <label htmlFor="endDate">End Date</label>
+            <input
+              type="month"
+              id="endDate"
+              value={experience.endDate}
+              onChange={this.stateObjectChange}
+            />
+            <label htmlFor="description">Description</label>
+            <input
+              type="textarea"
+              id="description"
+              value={experience.description}
+              onChange={this.stateObjectChange}
+            />
+          </fieldset>
           <label htmlFor="experience">Experience</label>
           <input
             type="textarea"
