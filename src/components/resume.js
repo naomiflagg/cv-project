@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import Contact from './components/contact';
+import Contact from './contact';
 // import Sidebar from './components/sidebar';
 
 class Resume extends Component {
@@ -66,9 +66,15 @@ class Resume extends Component {
       experience
     } = this.state;
 
+    // const contactProps = () => {
+    //   this.state.map((item, index) => {
+    //     console.log(item, index);
+    //     return <Contact item={item} />;
+    //   });
+    // };
+
     return (
       <div>
-        {/* <Overview tasks={this.state.tasks} /> */}
         <form>
           <label htmlFor="name">Name:</label>
           <input
@@ -98,22 +104,21 @@ class Resume extends Component {
             value={linkedin}
             onChange={this.handleChange}
           />
-          <label htmlFor="website">Website</label>
+          <label htmlFor="website">Website:</label>
           <input
             type="url"
             id="website"
             value={website}
             onChange={this.handleChange}
           />
-          <label htmlFor="interests">Interests</label>
+          <label htmlFor="interests">Interests (separate by comma)</label>
           <input
             type="textarea"
             id="interests"
             value={interests}
             onChange={this.handleChange}
           />
-          <input type="submit" onClick={this.handleClick}></input>
-          <label htmlFor="skills">Skills</label>
+          <label htmlFor="skills">Skills (separate by comma)</label>
           <input
             type="textarea"
             id="skills"
@@ -143,7 +148,7 @@ class Resume extends Component {
               value={education.course}
               onChange={this.stateObjectChange}
             />
-            <label for="startYear">Start Year</label>
+            <label htmlFor="startYear">Start Year</label>
             <input
               type="number"
               id="startYear"
@@ -185,7 +190,7 @@ class Resume extends Component {
               value={experience.jobLocation}
               onChange={this.stateObjectChange}
             />
-            <label for="startDate">Start Date</label>
+            <label htmlFor="startDate">Start Date</label>
             <input
               type="month"
               id="startDate"
@@ -207,15 +212,10 @@ class Resume extends Component {
               onChange={this.stateObjectChange}
             />
           </fieldset>
-          <label htmlFor="experience">Experience</label>
-          <input
-            type="textarea"
-            id="experience"
-            value={experience}
-            onChange={this.handleChange}
-          />
           <input type="submit" onClick={this.handleClick} />
         </form>
+        {/* {contactProps} */}
+        <Contact props={this.state}/>
       </div>
     );
   }
